@@ -1,0 +1,24 @@
+.header {
+  background-color: #fff;
+  padding: 10px 0;
+}
+
+.content{
+  max-width: 1120px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.company-name{
+  margin-left: 10px;
+
+  font-size: large;
+  font-weight: bold;
+}
+
+.section {
+  display: flex;
+  align-items: center;
+}
