@@ -6,8 +6,7 @@
 Tabela  de lista de usuários com informações e busca.
 
   
-
-![](file:///home/risoaldo/Downloads/Captura%20de%20tela%20de%202021-10-27%2006-21-04.png)
+![Captura de tela de 2021-10-27 06-21-04](https://user-images.githubusercontent.com/21092692/139066226-cc68e906-43ac-41c3-a259-b1f2c5963166.png)
   
 
 ## Tecnologias e ferramentas usadas
