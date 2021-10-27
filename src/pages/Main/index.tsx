@@ -1,26 +1,23 @@
 import { useContext, useEffect, useState } from "react";
-import { UserContext } from "../../context/userContext";
 
+import { UserContext } from "../../context/userContext";
 
 import Header from "../../components/Header";
 import Table from "../../components/Table";
-import ModalUser from "../../components/ModalUser";
 
 import "./style.css";
+import { User } from "../../types/user";
 
 function Main() {
-  const [search, setSearch] = useState("");
-  const [userModalOpen, setUSerModalOpen] = useState(false);
+  const { users, filterUser } = useContext(UserContext);
 
-  const { users } = useContext(UserContext);
-  console.log("usersss: ", users);
+  const [searchText, setSearchText] = useState("");
+  const [userFiltred, setUSerFiltred] = useState<User[]>({} as User[]);
 
-  const handleModalOpen = () => {
-    setUSerModalOpen(true);
-  };
-  const handleModalClose = () => {
-    setUSerModalOpen(false);
-  };
+  useEffect(() => {
+    const result = filterUser(searchText);
+    setUSerFiltred(result);
+  }, [searchText, users, filterUser]);
 
   return (
     <>
@@ -36,11 +33,11 @@ function Main() {
 
           <input
             className="input-main"
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={(e) => setSearchText(e.target.value)}
           />
 
           <div className="table-content-main">
-            <Table users={users}  />
+            <Table users={users} userFiltred={userFiltred} />
           </div>
         </div>
       </div>
@@ -49,7 +46,6 @@ function Main() {
         isOpen={userModalOpen}
         onRequestClose={handleModalClose}
       /> */}
-      
     </>
   );
 }

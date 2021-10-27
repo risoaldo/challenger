@@ -1,20 +1,12 @@
-import { Dispatch, SetStateAction, useContext } from "react";
+import { Dispatch, SetStateAction } from "react";
 
 import {
   Button,
-  Card,
-  CardActions,
-  CardContent,
-  CardMedia,
   Modal,
-  Typography,
 } from "@mui/material";
 import { User } from "../../types/user";
 
 import "./style.css";
-
-const style = {};
-
 interface ModalProps {
   isOpen: boolean;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
@@ -22,7 +14,6 @@ interface ModalProps {
   userInfo: User;
 }
 export default function ModalUser({ userInfo, isOpen, setIsOpen }: ModalProps) {
-  console.log(userInfo);
 
   return (
     <Modal
