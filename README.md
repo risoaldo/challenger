@@ -13,6 +13,7 @@ Tabela  de lista de usuários com informações e busca.
 ## Tecnologias e ferramentas usadas
 
   
+- Javascript
 
 - React
 

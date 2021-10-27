@@ -1,7 +1,5 @@
 import { createContext, ReactNode, useEffect, useState } from "react";
 
-import { useQuery } from "react-query";
-
 import { User } from "../types/user";
 import { api } from "../services/api";
 
@@ -21,17 +19,7 @@ export const UserContext = createContext<UserContextData>(
 
 export function UserProvider({ children }: UserProviderProps) {
   const [users, setUsers] = useState<User[]>([]);
-  // const {data, isLoading, isError} = useQuery("users", async () => {
-  //   try {
-  //     await api
-  //       .get("/?results=10")
-  //       .then((response) => setUsers(response.data.results));
-  //     console.log(users);
-  //     return users;
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
-  // });
+
   useEffect(() => {
     async function loadUsers() {
       try {
@@ -39,7 +27,6 @@ export function UserProvider({ children }: UserProviderProps) {
         const data = await response.data.results;
         // .then((response) => setUsers(response.data.results));
         setUsers(data);
-        console.log("users ontexto", data);
       } catch (e) {
         console.log(e);
       }

@@ -3,7 +3,7 @@ export type User = {
   login: Login;
   name: Name;
   email: string;
-  gender: number;
+  gender: string;
   dob: Dob;
   phone: string;
   nat: string;

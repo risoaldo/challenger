@@ -3,7 +3,6 @@ import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../context/userContext";
 import { User } from "../../types/user";
 
-import CircularProgress from "@mui/material/CircularProgress";
 
 import Header from "../../components/Header";
 import Table from "../../components/Table";
@@ -14,17 +13,7 @@ function Main() {
   const { users, filterUser, loadMoreUsers } = useContext(UserContext);
 
   const [searchText, setSearchText] = useState("");
-  const [userFiltred, setUSerFiltred] = useState<User[]>({} as User[]);
-
-  // useEffect(() => {
-  //   async function usersData() {
-  //     const users = await loadUsers();
-  //     console.log(users);
-  //     setUSerFiltred(users);
-  //     return users;
-  //   }
-  //   usersData();
-  // }, []);
+  const [userFiltred, setUSerFiltred] = useState<User[]>([]);
 
   useEffect(() => {
     const result = filterUser(searchText);
@@ -51,9 +40,9 @@ function Main() {
             className="input-main"
             onChange={(e) => setSearchText(e.target.value)}
           />
-
+          
           <div className="table-content-main">
-            <Table users={users} userFiltred={userFiltred} />
+            <Table userFiltred={userFiltred} />
           </div>
           <div className="loading-more" onClick={handleClickLoadingMore}>
             Loading More
