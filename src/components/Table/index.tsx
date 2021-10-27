@@ -37,6 +37,7 @@ export default function DenseTable({ users, userFiltred }: TableProps) {
               <TableCell align="center">Geder</TableCell>
               <TableCell align="center">Birth</TableCell>
               <TableCell align="center">Actions</TableCell>
+              <TableCell align="center"></TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -69,8 +70,6 @@ export default function DenseTable({ users, userFiltred }: TableProps) {
           </TableBody>
         </Table>
       </TableContainer>
-
-      <Pagination />
     </>
   );
 }

@@ -60,11 +60,6 @@ function Main() {
           </div>
         </div>
       </div>
-
-      {/* <ModalUser
-        isOpen={userModalOpen}
-        onRequestClose={handleModalClose}
-      /> */}
     </>
   );
 }
