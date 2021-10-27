@@ -1,0 +1,59 @@
+.content-modal-user{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.user-modal-container{
+  padding: 40px;
+}
+
+.user-modal-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  border-radius: 20px;
+  
+  padding: 30px;
+  background-color: #fff;
+
+}
+
+.image-user-modal{
+  width: 130px;
+  height: 130px;
+
+  position: relative;
+
+  margin-top: -50px;
+
+  border-radius: 50%;
+}
+
+.user-modal-description{
+  padding: 10px 0;
+}
+
+.user-modal-divider{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px 0;
+  margin: 2px 0;
+}
+
+.name-user-modal{
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.user-modal-divider-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}

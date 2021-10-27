@@ -2,6 +2,7 @@ import { Avatar } from "@mui/material";
 
 import "./style.css";
 
+
 function Main() {
   return (
     <header className="header">

@@ -1,14 +1,27 @@
 import { useContext, useEffect, useState } from "react";
+import { UserContext } from "../../context/userContext";
+
+
 import Header from "../../components/Header";
 import Table from "../../components/Table";
-import { UserContext } from "../../context/userContext";
+import ModalUser from "../../components/ModalUser";
 
 import "./style.css";
 
 function Main() {
   const [search, setSearch] = useState("");
+  const [userModalOpen, setUSerModalOpen] = useState(false);
+
   const { users } = useContext(UserContext);
   console.log("usersss: ", users);
+
+  const handleModalOpen = () => {
+    setUSerModalOpen(true);
+  };
+  const handleModalClose = () => {
+    setUSerModalOpen(false);
+  };
+
   return (
     <>
       <Header />
@@ -27,10 +40,16 @@ function Main() {
           />
 
           <div className="table-content-main">
-            <Table />
+            <Table users={users}  />
           </div>
         </div>
       </div>
+
+      {/* <ModalUser
+        isOpen={userModalOpen}
+        onRequestClose={handleModalClose}
+      /> */}
+      
     </>
   );
 }
