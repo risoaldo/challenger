@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -13,6 +13,7 @@ import ModalWrapper from "../ModalUserWraper";
 
 import { User } from "../../types/user";
 import { Pagination } from "../Pagination";
+import { UserContext } from "../../context/userContext";
 
 interface TableProps {
   users: User[];
@@ -22,7 +23,6 @@ export default function DenseTable({ users, userFiltred }: TableProps) {
   const [userInfo, setUserInfo] = useState<User>({} as User);
   const [isOpen, setIsOpen] = useState(false);
 
-  console.log(userFiltred);
   return (
     <>
       <TableContainer component={Paper}>
